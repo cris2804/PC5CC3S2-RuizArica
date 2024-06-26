@@ -160,20 +160,20 @@ CMD ["sh", "-c", "java -cp /app/src/main/java org.example.TowerDefenseGame && ta
 
 Abrimos el terminal y nos dirijimos al directorio donde se encuentra nuestro proyecto `TowerDefenseGame` 
 
-![Untitled](Pra%CC%81ctica%20Calificada%205%20CC3S2%2013a0636175594bc69fb827b9064e0dc3/Untitled.png)
+![Untitled](images/Untitled.png)
 
 Escribimos el siguiente comando para comando para acceder al contenedor 
 
 `docker exec -it tower-defense-container /bin/bash` 
 
-![Untitled](Pra%CC%81ctica%20Calificada%205%20CC3S2%2013a0636175594bc69fb827b9064e0dc3/Untitled%201.png)
+![Untitled](images/Untitled%201.png)
 
 • Configura una red personalizada para la aplicación Tower Defense. Implementa múltiples
 contenedores que interactúen entre sí a través de esta red personalizada.
 
 `docker network create game-network`
 
-![Untitled](Pra%CC%81ctica%20Calificada%205%20CC3S2%2013a0636175594bc69fb827b9064e0dc3/Untitled%202.png)
+![Untitled](images/Untitled%202.png)
 
 ## Ejercicio 2: Redes y volúmenes en Docker (3 puntos)
 
@@ -191,7 +191,7 @@ para que utilicen esta red.
 
 `docker network create game-network`
 
-![Untitled](Pra%CC%81ctica%20Calificada%205%20CC3S2%2013a0636175594bc69fb827b9064e0dc3/Untitled%202.png)
+![Untitled](images/Untitled%202.png)
 
 • Implementa un volumen Docker para almacenar los datos del juego de forma persistente.
 Asegúrate de que el volumen se monte correctamente y que los datos persistan después de
@@ -199,7 +199,7 @@ reiniciar el contenedor.
 
 `docker volume create game-data`
 
-![Untitled](Pra%CC%81ctica%20Calificada%205%20CC3S2%2013a0636175594bc69fb827b9064e0dc3/Untitled%203.png)
+![Untitled](images/Untitled%203.png)
 
 • Utiliza docker-compose para definir los servicios de la aplicación Tower Defense, incluyendo
 redes y volúmenes. Escribe un archivo docker-compose.yml que configure estos servicios y
@@ -229,7 +229,7 @@ volumes:
 
 Ahora lo desplegamos con `docker-compose up -d` :
 
-![Untitled](Pra%CC%81ctica%20Calificada%205%20CC3S2%2013a0636175594bc69fb827b9064e0dc3/Untitled%204.png)
+![Untitled](images/Untitled%204.png)
 
 ## Ejercicio 3: Orquestación con Kubernetes (4 puntos)
 
@@ -303,25 +303,25 @@ Primero inicializamos Kubernet:
 
 `minikube start`  
 
-![Untitled](Pra%CC%81ctica%20Calificada%205%20CC3S2%2013a0636175594bc69fb827b9064e0dc3/Untitled%205.png)
+![Untitled](images/Untitled%205.png)
 
 Aplicamos los archivos de configuración en Kubernetes
 `kubectl apply -f deployment.yaml`
 
-![Untitled](Pra%CC%81ctica%20Calificada%205%20CC3S2%2013a0636175594bc69fb827b9064e0dc3/Untitled%206.png)
+![Untitled](images/Untitled%206.png)
 
 `kubectl apply -f service.yaml`
 
-![Untitled](Pra%CC%81ctica%20Calificada%205%20CC3S2%2013a0636175594bc69fb827b9064e0dc3/Untitled%207.png)
+![Untitled](images/Untitled%207.png)
 
 Verificamos el estado del despliegue
 `kubectl get pods`
 
-![Untitled](Pra%CC%81ctica%20Calificada%205%20CC3S2%2013a0636175594bc69fb827b9064e0dc3/Untitled%208.png)
+![Untitled](images/Untitled%208.png)
 
 `kubectl get services`
 
-![Untitled](Pra%CC%81ctica%20Calificada%205%20CC3S2%2013a0636175594bc69fb827b9064e0dc3/Untitled%209.png)
+![Untitled](images/Untitled%209.png)
 
 ## Ejercicio 4: Pruebas unitarias y de integración con Mockito (4 puntos)
 
