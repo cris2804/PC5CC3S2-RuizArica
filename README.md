@@ -403,6 +403,8 @@ public class TowerDefenseGameTest {
 • Configura un pipeline de integración continua (CI) que ejecute automáticamente las pruebas unitarias e informe sobre los resultados. Utiliza herramientas como Jenkins o GitHub Actions
 para implementar este pipeline (opcional).
 
+![Untitled](images/Untitled%2010.png)
+
 ## Ejercicio 5: Pruebas de mutación (4 puntos)
 
 ### **Teoría:**
@@ -415,13 +417,41 @@ Los tipos de operadores de mutación de mutacion aritmetica ,relacional ,logica,
 
 • Discute las métricas utilizadas para evaluar la efectividad de las pruebas de mutación, como la tasa de mutación (mutation score) y la cobertura de mutación.
 
+La tasa de mutaicon que indica el porcentaje de mutantes que son detectados (o "matados") por los casos de prueba, en comparación con el total de mutantes generados, una alta tasa de mutaicon indica que los casos de prueba son efectivos para la deteccion de errores.La cobertura de mutacion mide el porcentaje de código que está siendo afectado por los mutantes generados y que, a su vez, es verificado por los casos de prueba.
+
 ### **Práctico:**
 
 • Configura una herramienta de pruebas de mutación, como PIT, en el proyecto Tower Defense. Asegúrate de integrar la herramienta en el pipeline de CI (opcional).
 
+Ejecutamos pitest:
+
+![Untitled](images/Untitled%2011.png)
+
 • Implementa pruebas de mutación para la clase Map y analiza los resultados. Asegúrate de identificar y corregir las pruebas unitarias que no detecten mutaciones.
 
+```java
+ @Test
+    public void testGameState() {
+        when(mockPlayer.getScore()).thenReturn(10);
+        when(mockPlayer.getBaseHealth()).thenReturn(90);
+        when(mockMap.toString()).thenReturn("[ ][ ][ ][ ][ ]\n" +
+                "[ ][ ][ ][ ][ ]\n" +
+                "[ ][ ][ ][ ][ ]\n" +
+                "[ ][ ][ ][ ][ ]\n" +
+                "[ ][ ][ ][ ][ ]\n");
+
+        game.gameState();
+
+        verify(mockMap).toString();
+        verify(mockPlayer).getScore();
+        verify(mockPlayer).getBaseHealth();
+        verifyNoMoreInteractions(mockMap, mockPlayer);
+    }
+```
+
 • Realiza un informe detallado sobre la calidad de las pruebas del proyecto Tower Defense, basado en los resultados de las pruebas de mutación. Incluye recomendaciones para mejorar la cobertura y efectividad de las pruebas.
+
+![Untitled](images/Untitled%2012.png)
 
 ## Ejercicio 6: Diseño por contrato (Design by Contract) (2 puntos)
 
@@ -443,7 +473,74 @@ Las precondiciones aseguran que el método se ejecute con entradas válidas y en
 
 • Aplica el diseño por contrato a la clase Tower. Define las precondiciones, postcondiciones e invariantes de los métodos principales de la clase.
 
+```java
+package org.example;
+
+public class Tower {
+    private char symbol;
+
+    public Tower(char symbol) {
+        // Precondición: El símbolo no debe ser un espacio en blanco
+        assert symbol != ' ' : "El símbolo de la torre no puede ser un espacio en blanco";
+
+        this.symbol = symbol;
+
+        // Postcondición: El símbolo debe ser igual al proporcionado
+        assert this.symbol == symbol : "El símbolo de la torre no se inicialioz correctamente";
+    }
+
+    public char getSymbol() {
+        // Invariante: El símbolo no debe ser un espacio en blanco
+        assert symbol != ' ' : "El símbolo de la torre no puede ser un espacio en blanco";
+        return symbol;
+    }
+
+    public void setSymbol(char symbol) {
+        // Precondición: El símbolo no debe ser un espacio en blanco
+        assert symbol != ' ' : "El símbolo de la torre no puede ser un espacio en blanco";
+
+        this.symbol = symbol;
+
+        // Postcondición: El símbolo debe ser igual al proporcionado
+        assert this.symbol == symbol : "El símbolo de la torre no se actualizó correctamente";
+    }
+}
+
+```
+
 • Escribe pruebas unitarias que verifiquen el cumplimiento de los contratos definidos para la clase Tower. Utiliza herramientas como Java Assertions para implementar estas verificaciones.
+
+```java
+package org.example;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class TowerTest {
+
+    @Test
+    public void testTowerConstructorValidSymbol() {
+        Tower tower = new Tower('T');
+        assertEquals('T', tower.getSymbol());
+    }
+
+    @Test
+    public void testSetSymbolValid() {
+        Tower tower = new Tower('T');
+        tower.setSymbol('A');
+        assertEquals('A', tower.getSymbol());
+    }
+
+    @Test
+    public void testGetSymbolInvariant() {
+        Tower tower = new Tower('T');
+        assertEquals('T', tower.getSymbol());
+        // El símbolo debe ser diferente de un espacio en blanco
+        assertNotEquals(' ', tower.getSymbol());
+    }
+}
+
+```
 
 • Realiza una revisión de código para asegurarte de que todas las clases del proyecto Tower Defense siguen los principios del diseño por contrato. Documenta cualquier ajuste o mejora necesaria en el código.
 

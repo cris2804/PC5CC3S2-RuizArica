@@ -3,7 +3,7 @@ plugins {
     // https://gradle-pitest-plugin.solidsoft.info/
 //    id 'info.solidsoft.pitest' version '1.15.0'
     // https://docs.gradle.org/current/userguide/jacoco_plugin.html
-    id 'jacoco' // Plugin de JaCoCo
+//    id 'jacoco' // Plugin de JaCoCo
     id 'info.solidsoft.pitest' version '1.15.0'
 }
 
@@ -46,18 +46,18 @@ pitest {
 //}
 
 // jacoco
-jacoco {
-    toolVersion = "0.8.12" // Versión de JaCoCo (compatible con java 21)
-}
-
-jacocoTestReport {
-    dependsOn test // Ejecuta las pruebas antes de generar el informe
-
-    reports {
-        xml.required.set(true)
-        html.required.set(true)
-    }
-}
+//jacoco {
+//    toolVersion = "0.8.12" // Versión de JaCoCo (compatible con java 21)
+//}
+//
+//jacocoTestReport {
+//    dependsOn test // Ejecuta las pruebas antes de generar el informe
+//
+//    reports {
+//        xml.required.set(true)
+//        html.required.set(true)
+//    }
+//}
 //pitest {
 //    junit5PluginVersion = '1.0.0'
 //}
@@ -75,7 +75,7 @@ jacocoTestCoverageVerification {
 }
 */
 
-check.dependsOn jacocoTestCoverageVerification
+//check.dependsOn jacocoTestCoverageVerification
 
 // ./gradlew pitest
 // ./gradlew jacocoTestReport

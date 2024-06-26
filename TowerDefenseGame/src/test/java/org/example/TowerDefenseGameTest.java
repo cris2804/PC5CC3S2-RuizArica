@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 public class TowerDefenseGameTest {
     @Mock
@@ -22,34 +24,22 @@ public class TowerDefenseGameTest {
         game.placeTower(mockTower, 2, 2);
         verify(mockMap).placeTower(mockTower, 2, 2);
     }
+
+    @Test
+    public void testGameState() {
+        when(mockPlayer.getScore()).thenReturn(10);
+        when(mockPlayer.getBaseHealth()).thenReturn(90);
+        when(mockMap.toString()).thenReturn("[ ][ ][ ][ ][ ]\n" +
+                "[ ][ ][ ][ ][ ]\n" +
+                "[ ][ ][ ][ ][ ]\n" +
+                "[ ][ ][ ][ ][ ]\n" +
+                "[ ][ ][ ][ ][ ]\n");
+
+        game.gameState();
+
+        verify(mockMap).toString();
+        verify(mockPlayer).getScore();
+        verify(mockPlayer).getBaseHealth();
+        verifyNoMoreInteractions(mockMap, mockPlayer);
+    }
 }
-
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.Test;
-//import org.mockito.Mockito;
-//
-//import static org.junit.jupiter.api.Assertions.assertTrue;
-//import static org.mockito.Mockito.*;
-
-//public class TowerDefenseGameTest {
-//    private TowerDefenseGame game;
-//    private Map map;
-//    private Player player;
-//    private Wave wave;
-//
-//    @BeforeEach
-//    public void setUp() {
-//        map = Mockito.mock(Map.class);
-//        player = Mockito.mock(Player.class);
-//        wave = Mockito.mock(Wave.class);
-//        game = new TowerDefenseGame();
-//    }
-//
-//    @Test
-//    public void testStartGame() {
-//        wave.start();
-//        game.startWave();
-//        verify(wave).start();
-//    }
-//}
-

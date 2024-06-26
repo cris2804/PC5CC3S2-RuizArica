@@ -1,8 +1,6 @@
 
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-S
-#src/main/java/org/example/Main.java,0\b\0ba1b9c7a4878802f938e331cc2d8a042087ec6b
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 7
@@ -16,35 +14,15 @@ X
 S
 #build/reports/tests/test/index.html,a\9\a925c8b8a99ce70bdfadf43619e26e976eb36ce4
 T
-$src/main/java/org/example/Enemy.java,8\8\88bd7659cfd257fd77ba81661fd2a7f19662fabe
-T
 $src/main/java/org/example/Tower.java,e\a\eaa6e35a70681433c7f89734abecdc4d584c96c0
 S
 #src/main/java/org/example/Wave.java,8\3\8324815b7d5b69f666fa0346a1d495424e06dc94
 U
 %src/main/java/org/example/Player.java,d\b\db455f11f40504110fb1ef2567ff0b7b6044c09c
-[
-+src/main/java/org/example/EnemyFactory.java,7\5\75abf61a50333fbee94ac2373104b5c75c64d5ab
-[
-+src/main/java/org/example/TowerFactory.java,9\1\911b49a7d4e2f5fdbe6998798bf856904e2dd1b0
 R
 "src/main/java/org/example/Map.java,5\6\56d4160cc6ca78875ccd68909a03119ccce81fb1
-S
-#src/main/java/org/example/Game.java,f\1\f1d67a7ee35efa3e1601241987bec47697a781ba
 9
 	readme.md,2\7\275d783e298228506068436512433d343feb52aa
-a
-1src/main/java/org/example/CannonTowerFactory.java,e\e\ee0815fc044873ad3c9bcf6e9ff2f2595ae73876
-`
-0src/main/java/org/example/LaserTowerFactory.java,3\1\3133bc61b6a1b4fa70ddcee13b8c7d51fdf5a93f
-`
-0src/main/java/org/example/ArrowTowerFactory.java,b\9\b90b717ce9a4766969f0ac6fe214d2014f04d91c
-`
-0src/main/java/org/example/BasicEnemyFactory.java,7\8\788ff94ff592ccb7e83128180de8231f575b1d03
-_
-/src/main/java/org/example/BossEnemyFactory.java,3\b\3be7c4a734d882515fd1e485f4d8d730abdd19d8
-a
-1src/main/java/org/example/SpeedyEnemyFactory.java,7\d\7d3f3c70ab3b096f1e9f288d506defa66f7ac4af
 d
 4src/main/java/org/example/TypeTower/CannonTower.java,3\3\3343e365055ee8282c12fedac769de64e58add59
 c
@@ -80,3 +58,7 @@ B
 deployment.yaml,a\6\a6219c80b63abe020f8ab9c671706c1510541743
 <
 service.yaml,b\8\b8f0e0ea7c47609f243af2d09ffaf10eba128465
+`
+0src/test/java/org/example/TowerDefenseGamee.java,5\4\549375ab001f287b7dbc53be3f8c031df5d84959
+X
+(src/test/java/org/example/TowerTest.java,3\f\3f55dfc289d0763b59ba397f205e8c3f30e90756

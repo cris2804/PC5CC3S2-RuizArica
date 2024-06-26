@@ -1,3 +1,11 @@
 
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¥¨û—…2
+½
+java:S1192"zDefine a constant instead of duplicating this literal "El sÃ­mbolo de la torre no puede ser un espacio en blanco" 3 times.(÷Á§8´Â”·…2J$15c6570f-9ae0-44a5-b6a8-ce3ea18fc442
+k
+java:S4274"(Replace this assert with a proper check.(÷Á§8¾Â”·…2J$579c341c-5619-41d7-84ec-a36686bee4ba
+k
+java:S4274"(Replace this assert with a proper check.(Ü¹×©8¾Â”·…2J$a638428e-6e15-442c-bf5b-150b5af95802
+k
+java:S4274"(Replace this assert with a proper check.(÷Á§8ÁÂ”·…2J$010a8c15-6516-4b1c-8847-00ca316785ee
+k
+java:S4274"(Replace this assert with a proper check.(–ş¤ğ8ÁÂ”·…2J$a18e0a4c-ff45-4253-8245-882a878d79d6
